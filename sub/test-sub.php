@@ -1,0 +1,1 @@
+var_dump(PHP);dump(PHP);phpinfo(PHP)var_export(PHP)console.log(JS);dd;echo "test";echo "null";

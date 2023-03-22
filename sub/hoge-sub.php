@@ -1,0 +1,3 @@
+
+echo "test";
+echo "null";
