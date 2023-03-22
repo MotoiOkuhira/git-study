@@ -1,0 +1,28 @@
+name: CodeCheck Actions
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run shell script
+        run: |
+          if sh script.sh; then
+            echo "Success"
+          else
+            echo "Failure"
+            exit 1
+          fi
+
+      - name: Stop if shell script failed
+        if: ${{ failure() }}
+        run: echo "Error: Shell script failed" && exit 1
